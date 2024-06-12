@@ -1,0 +1,20 @@
+// _header.scss
+@import 'variables';
+@import 'mixins';
+
+.header {
+  display: flex;
+  height: $header-footer-height;
+  width: 100%;
+  margin-bottom: 35px;
+
+  .white-part {
+    background-color: $white-color;
+    width: 33.33%;
+  }
+
+  .gray-part {
+    background-color: $gray-color;
+    width: 66.67%;
+  }
+}

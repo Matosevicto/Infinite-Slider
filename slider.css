@@ -9,69 +9,73 @@ body {
     height: 100vh;
 }
 
+.container {
+    max-width: 940px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.content {
+    display: flex;
+}
+
 .slider-wrapper {
     position: relative;
-    width: 80%;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: calc(100% + 200px); /* Osigurajte da slider prelazi lijevi rub */
 }
 
 .slider {
     display: flex;
-    flex-direction: column; /* Change to column to handle multiple rows */
+    flex-direction: column;
     transition: transform 0.5s ease-in-out;
+    width: calc(100% + 200px);
 }
 
 .row {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    margin-bottom: 10px; /* Space between rows */
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+#topRow {
+    
+    left: -100px; /* Pomaknite slider lijevo */
+    max-width: calc(100% - 100px);
+    overflow: hidden;
+    position: relative;
+
+}
+
+#bottomRow {
+    left: -100px; /* Pomaknite slider lijevo */
+    max-width: calc(100% - 160px);
+    overflow: hidden;
+    position: relative;
 }
 
 .slide {
-    flex: 1 1 18%;
     margin: 0 5px;
+    flex: 0 0 auto;
+    box-sizing: border-box;
 }
 
 .slide img {
+    max-width: 160px;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    max-height: 120px; /* Maksimalna visina slike */
+    object-fit: contain; /* Održava omjer širine i visine slike */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
-
-.arrow-left, .arrow-right {
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 2;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.arrow-left {
-    left: 10px;
-}
-
-.arrow-right {
-    right: 10px;
-}
-
-.arrow-left:hover, .arrow-right:hover {
-    background-color: #555;
+    box-sizing: border-box;
 }
 
 .modal {
@@ -131,4 +135,66 @@ body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+.slide {
+    animation-duration: 1s;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#row1 .slide:nth-child(n+6),
+#row2 .slide:nth-child(n+5) {
+    animation-name: slideInRight;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    
+    z-index: 10;
+}
+
+.arrow-left {
+    bottom: 40px;
+    right: 70px;
+    padding-top: 5px;
+}
+
+.arrow-right {
+    top: 0px;
+    right: 70px;
+    padding-bottom: 5px;
+}
+
+.arrow-left img, .arrow-right img {
+    width: 20px;
+    height: 20px;
+}
+
+.text-content {
+    width: 200px;
+    padding-left: 20px;
+    position: relative;
+    right: 80px;
+}
+
+.text-content h2 {
+    margin-top: 0;
+}
+
+.text-content p {
+    margin: 0;
 }

@@ -3,44 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galarija slika</title>
-  <link rel="stylesheet" href="slider.css">
+  <title>Galerija slika</title>
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="dist/slider.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <div class="white-part"></div>
+    <div class="gray-part"></div>
+  </header>
 
-  <div class="slider-wrapper">
-    <div class="arrow-left" id="arrow-left">
-      <img src="Assets/arrow-gray-left.png" alt="Lijeva strelica">
-    </div>
-    <div class="slider" id="slider">
-      <div class="row" id="row1">
-        <div class="slide"><img src="Assets/slider-image-1.jpg" alt="Opis slike 1"></div>
-        <div class="slide"><img src="Assets/slider-image-2.jpg" alt="Opis slike 2"></div>
-        <div class="slide"><img src="Assets/slider-image-3.jpg" alt="Opis slike 3"></div>
-        <div class="slide"><img src="Assets/slider-image-4.jpg" alt="Opis slike 4"></div>
-        <div class="slide"><img src="Assets/slider-image-5.jpg" alt="Opis slike 5"></div>
+  <div class="container">
+    <div class="slider-wrapper">
+      <div class="slider" id="slider">
+        <div class="row" id="topRow">
+          <div class="slide"><img src="Assets/slider-image-1.jpg" alt="Opis slike 1"></div>
+          <div class="slide"><img src="Assets/slider-image-2.jpg" alt="Opis slike 2"></div>
+          <div class="slide"><img src="Assets/slider-image-3.jpg" alt="Opis slike 3"></div>
+          <div class="slide"><img src="Assets/slider-image-4.jpg" alt="Opis slike 4"></div>
+          <div class="slide"><img src="Assets/slider-image-5.jpg" alt="Opis slike 5"></div>
+        
+        </div>
+        <div class="row" id="bottomRow">
+          <div class="slide"><img src="Assets/slider-image-5.jpg" alt="Opis slike 5"></div>
+          <div class="slide"><img src="Assets/slider-image-6.jpg" alt="Opis slike 6"></div>
+          <div class="slide"><img src="Assets/slider-image-7.jpg" alt="Opis slike 7"></div>
+          <div class="slide"><img src="Assets/slider-image-8.jpg" alt="Opis slike 8"></div>
+          <div class="slide"><img src="Assets/slider-image-9.jpg" alt="Opis slike 9"></div>
+          <!-- Strelice unutar drugog reda -->
+          <button class="arrow-left" id="arrow-left">
+            <img src="Assets/arrow-gray-left.png" alt="Lijeva strelica">
+          </button>
+          <button class="arrow-right" id="arrow-right">
+            <img src="Assets/arrow-gray-right.png" alt="Desna strelica">
+          </button>
+        </div>
       </div>
-    
-      <div class="row" id="row2">
-        <div class="slide"><img src="Assets/slider-image-6.jpg" alt="Opis slike 6"></div>
-        <div class="slide"><img src="Assets/slider-image-7.jpg" alt="Opis slike 7"></div>
-        <div class="slide"><img src="Assets/slider-image-8.jpg" alt="Opis slike 8"></div>
-        <div class="slide"><img src="Assets/slider-image-9.jpg" alt="Opis slike 9"></div>
-      </div>
     </div>
-    <div class="arrow-right" id="arrow-right">
-      <img src="Assets/arrow-gray-right.png" alt="Desna strelica">
+    <div class="text-content">
+      <h2>Galerija Fotografija</h2>
+      <p>Nevjerojatna ljepota prirode uhvaćena u trenutku - doživite svježinu i spokoj kroz našu galeriju fotografija. </p>
     </div>
   </div>
-  
+
+  <footer class="footer">
+    <div class="white-part"></div>
+    <div class="gray-part"></div>
+  </footer>
+
   <!-- Modal structure -->
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
     <div id="caption"></div>
   </div>
-
-  <script src="slider.js"></script>
 </body>
 </html>

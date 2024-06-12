@@ -1,0 +1,21 @@
+// _footer.scss
+@import 'variables';
+@import 'mixins';
+
+.footer {
+  display: flex;
+  height: $header-footer-height;
+  width: 100%;
+  margin-top: 25px;
+
+
+  .white-part {
+    background-color: $white-color;
+    width: 33.33%;
+  }
+
+  .gray-part {
+    background-color: $gray-color;
+    width: 66.67%;
+  }
+}

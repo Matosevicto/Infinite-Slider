@@ -1,0 +1,124 @@
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% + 200px); 
+  }
+  
+  .slider {
+    display: flex;
+    flex-direction: column;
+    transition: transform $transition-duration ease-in-out;
+    width: calc(100% + 200px);
+  }
+  
+  .row {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  #topRow {
+    
+    
+    position: relative;
+  }
+  
+  #bottomRow {
+    left: -100px; 
+    max-width: calc(100% - 160px);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slide {
+    margin: 0 $slide-margin;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .slide img {
+    max-width: $slide-max-width;
+    width: 100%;
+    height: auto;
+    max-height: $slide-max-height;
+    object-fit: contain; 
+    border-radius: 5px;
+    @include box-shadow($box-shadow-color);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  
+  .arrow-left, .arrow-right {
+    position: absolute;
+    cursor: pointer;
+    border: gray;
+    padding: $arrow-padding;
+    z-index: 10;
+  
+    img {
+        width: $arrow-size;
+        height: $arrow-size;
+    }
+  
+    &.arrow-left {
+        bottom: 30px;
+        right: 75px; 
+        border: 1px solid rgba(0, 0, 0, 0.3); 
+        border-radius: 3px;
+       
+    }
+  
+    &.arrow-right {
+        top: 0px;
+        right: 75px; 
+        border: 1px solid rgba(0, 0, 0, 0.3); 
+        border-radius: 3px;
+        
+        
+    }
+  
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+  
+  .slide {
+    animation-duration: 1s;
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  #topRow .slide:nth-child(n+5),
+  #bottomRow .slide:nth-child(n+5) {
+    animation-name: slideInRight;
+  }
+  
+  .text-content {
+    width: $text-width;
+    padding-left: $text-padding-left;
+    position: relative;
+    right: $text-position-right;
+  }
+  
+  .text-content h2 {
+    margin-top: 0;
+    color:#021691;
+  }
+  
+  .text-content p {
+    margin: 0;
+  }
+  
